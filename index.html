@@ -2,14 +2,18 @@
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title> Workbench App </title>
+    <title> WorkbAench pp </title>
     </head>
 
-    <body onload="random_number()">
+    <body onload="computer_move()">
     <div class="main"> 
-    <h1> Workbench App </h1>
-    <span id="number"> I'm thinking about a random number </span>
-    <button id="check_number"> Lalalal CLick me</button>
+    <h1> Rock Paper Scissors </h1>
+    <h1> Player's Moves </h1>
+    <button id="check_number" onclick="player_move('rock')"> Rock </button>
+    <button id="check_number" onclick="player_move('paper')"> Paper </button>
+    <button id="check_number" onclick="player_move('scissors')"> Scissors </button>
+
+
 
     </body>
 </html>
