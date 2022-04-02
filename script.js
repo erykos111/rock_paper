@@ -1,10 +1,11 @@
+//Variables to set up the game
 const allowed_moves = ['rock','paper','scissors']
 player_score = 0
 computer_score = 0
 
 
 
-
+//Get random move for computer
 function computer_move(){
     const random_number = Math.trunc((Math.random() * 3))
     computer_moves = allowed_moves[random_number]
@@ -12,6 +13,7 @@ function computer_move(){
 }
 
 
+//Get players move based on button clicked
 function player_move(move){
   computer_move()
   player_moves = move.toLowerCase()
@@ -25,15 +27,17 @@ function player_move(move){
   }
 }
 
-
+//Update player's move
 function update(){
   update_value = document.getElementById("player_moves")
   update_value.textContent = player_moves
 }
 
 
-function check_result(player_moves, computer_moves){
 
+
+//Check the result of a singular game
+function check_result(player_moves, computer_moves){
   game_results = document.getElementById("game_result")
   console.log("Computer Moves " + computer_moves)
   if (player_moves == computer_moves){
@@ -51,8 +55,10 @@ function check_result(player_moves, computer_moves){
   }
   }
   
-
+//Update both player and computer scores
   function update_score(player_score, computer_score){
     player_score_counter = document.getElementById("player_score_count")
+    computer_score_counter = document.getElementById("computer_score_count")
     player_score_counter.textContent = player_score
+    computer_score_counter.textContent = computer_score
   }
