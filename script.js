@@ -30,7 +30,7 @@ function player_move(move){
 //Update player's move
 function update(){
   update_value = document.getElementById("player_moves")
-  update_value.textContent = player_moves
+  update_value.textContent = "Player moves " + player_moves
 }
 
 
@@ -38,20 +38,26 @@ function update(){
 
 //Check the result of a singular game
 function check_result(player_moves, computer_moves){
+  computer = document.getElementById("computer_moves")
   game_results = document.getElementById("game_result")
   console.log("Computer Moves " + computer_moves)
   if (player_moves == computer_moves){
-  game_results.textContent = "Computer moves " + computer_moves + " It's a draw"
+  computer.textContent = "Computer moves " + computer_moves
+  //game_results.textContent = " It's a draw"
   }
   else if (player_moves == 'rock' && computer_moves == 'scissors' || player_moves == 'paper' && computer_moves == "rock" || player_moves == "scissors" && computer_moves == "paper" ){
-  game_results.textContent = "Computer moves " + computer_moves + " Player wins"
+  computer.textContent = "Computer moves " + computer_moves
+  //game_results.textContent =  " Player wins"
   player_score = player_score + 1
   update_score(player_score, computer_score)
+  check_game_result(player_score,computer_score)
   }
   else{
-    game_results.textContent = "Computer moves " + computer_moves + " Computer wins"
+    //game_results.textContent =  "Computer wins"
+    computer.textContent = "Computer moves " + computer_moves
     computer_score = computer_score + 1
     update_score(player_score, computer_score)
+    check_game_result(player_score,computer_score)
   }
   }
   
@@ -61,4 +67,15 @@ function check_result(player_moves, computer_moves){
     computer_score_counter = document.getElementById("computer_score_count")
     player_score_counter.textContent = player_score
     computer_score_counter.textContent = computer_score
+  }
+
+
+
+  function check_game_result(player_score,computer_score){
+    if (player_score == 5){
+      alert("Game over, player won")
+    }
+    else if (compueter_score == 5){
+      alert("Game over, computer won")
+    }
   }
