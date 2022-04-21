@@ -5,12 +5,8 @@ computer_score = 0
 
 
 
-//Get random move for computer
-function computer_move(){
-    const random_number = Math.trunc((Math.random() * 3))
-    computer_moves = allowed_moves[random_number]
-    
-}
+
+
 
 
 //Get players move based on button clicked
@@ -73,9 +69,33 @@ function check_result(player_moves, computer_moves){
 
   function check_game_result(player_score,computer_score){
     if (player_score == 5){
-      alert("Game over, player won")
+      alert("Game over, player won");
+      update_score(0,0)
     }
-    else if (compueter_score == 5){
-      alert("Game over, computer won")
+    else if (computer_score == 5){
+      alert("Game over, computer won");
+      update_score(0,0);
     }
   }
+
+
+
+  //Get random move for computer
+  function computer_move(){
+      const random_number = Math.trunc((Math.random() * 3))
+      computer_moves = allowed_moves[random_number]
+      
+  }
+
+
+  window.onload = function event_listeners(){
+    let rock = document.getElementById('rock_selection');
+    let paper = document.getElementById('paper_selection');
+    let scisors = document.getElementById('scissors_selection');
+    
+    rock.addEventListener('click', () => {player_move("rock")})
+    paper.addEventListener('click', () => {player_move("paper")})
+    scisors.addEventListener('click', () => {player_move("scissors")})
+  }
+  
+    

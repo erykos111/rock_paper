@@ -5,18 +5,19 @@
     <title> WorkbAench pp </title>
     </head>
 
-    <body onload="computer_move()">
+    <body >
     <div class="main"> 
-    <h1> Rock Paper Scissors </h1>
-    <h1> Pick your move </h1>
-    <button id="check_number" onclick="player_move('rock')"> Rock </button>
-    <button id="check_number" onclick="player_move('paper')"> Paper </button>
-    <button id="check_number" onclick="player_move('scissors')"> Scissors </button> <br>
-
+    <h1 id="title"> Rock Paper Scissors </h1>
+    <h2 id="players_move"> Pick your move </h2>
+    <div id="buttons">
+    <button id="rock_selection"> Rock </button>
+    <button id="paper_selection"> Paper </button>
+    <button id="scissors_selection"> Scissors </button> <br>
+    </div>
+    
     <span id="player_moves">  </span> <br>
     <span id="computer_moves">  </span> <br>
-    <span id="game_result">   </span> <br>
-
+    
     <span id="player_score"> Player Score </span>
     <span id="player_score_count">0</span>
 
